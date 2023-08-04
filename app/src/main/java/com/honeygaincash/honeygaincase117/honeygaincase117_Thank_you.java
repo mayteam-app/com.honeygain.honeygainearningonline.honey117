@@ -203,12 +203,58 @@ public class honeygaincase117_Thank_you extends AppCompatActivity {
 
     }
 
-    public void showfbNativeBanner() {
+   public void showfbNativeBanner() {
 
-        View adView = NativeBannerAdView.render(this, honeygaincase117_SplashActivity.nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
-        nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
-        // Add the Native Banner Ad View to your ad container
-        nativeBannerContainer.addView(adView);
+        if (honeygaincase117_SplashActivity.nativeBannerAd.isAdLoaded()) {
+            
+            View adView = NativeBannerAdView.render(this, honeygaincase117_SplashActivity.nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
+            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
+            // Add the Native Banner Ad View to your ad container
+            nativeBannerContainer.addView(adView);
+        } else {
+            
+            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+            String Bannerid = sharedPreferences.getString("Bannerid", null);
+            nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
+            nativeBannerAd = new NativeBannerAd(this, Bannerid);
+            Log.e(TAG, "fbnativebanner16 " + Bannerid);
+            NativeAdListener nativeAdListener = new NativeAdListener() {
+                @Override
+                public void onMediaDownloaded(Ad ad) {
+
+                }
+
+                @Override
+                public void onError(Ad ad, AdError adError) {
+                    Log.e(TAG, "fbnativebanner 16 " + adError.getErrorMessage());
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    
+                    Log.e(TAG, "Native ad is loaded and ready to be displayed!");
+                    View adView = NativeBannerAdView.render(getApplicationContext(), nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
+                    // Add the Native Banner Ad View to your ad container
+                    nativeBannerContainer.addView(adView);
+                }
+
+                @Override
+                public void onAdClicked(Ad ad) {
+
+                }
+
+                @Override
+                public void onLoggingImpression(Ad ad) {
+
+                }
+            };
+            nativeBannerAd.loadAd(
+                    nativeBannerAd.buildLoadAdConfig()
+                            .withAdListener(nativeAdListener)
+                            .build());
+
+
+        }
     }
 
     public void ShowFullAds() {
