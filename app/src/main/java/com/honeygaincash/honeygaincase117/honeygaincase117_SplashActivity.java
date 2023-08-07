@@ -43,7 +43,7 @@ public class honeygaincase117_SplashActivity extends AppCompatActivity {
 
 
         datafromlink();
-        NextScreen();
+
 
     }
 
@@ -271,83 +271,6 @@ public class honeygaincase117_SplashActivity extends AppCompatActivity {
 
         {
             sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String Bannerid = sharedPreferences.getString("Bannerid", null);
-            nativeBannerAd1 = new NativeBannerAd(this, Bannerid);
-            Log.e(TAG, "fbnativebanner16 " + Bannerid);
-            NativeAdListener nativeAdListener = new NativeAdListener() {
-                @Override
-                public void onMediaDownloaded(Ad ad) {
-
-                }
-
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.e(Splash, "fbnativebanner 16 " + adError.getErrorMessage());
-                }
-
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    Log.e(Splash, "Native ad is loaded and ready to be displayed!");
-                }
-
-                @Override
-                public void onAdClicked(Ad ad) {
-
-                }
-
-                @Override
-                public void onLoggingImpression(Ad ad) {
-
-                }
-            };
-            nativeBannerAd1.loadAd(
-                    nativeBannerAd1.buildLoadAdConfig()
-                            .withAdListener(nativeAdListener)
-                            .build());
-
-
-        }
-        {
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String Bannerid = sharedPreferences.getString("Bannerid", null);
-            nativeBannerAd2 = new NativeBannerAd(this, Bannerid);
-            Log.e(TAG, "fbnativebanner16 " + Bannerid);
-            NativeAdListener nativeAdListener = new NativeAdListener() {
-                @Override
-                public void onMediaDownloaded(Ad ad) {
-
-                }
-
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.e(Splash, "fbnativebanner 16 " + adError.getErrorMessage());
-                }
-
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    Log.e(Splash, "Native ad is loaded and ready to be displayed!");
-                }
-
-                @Override
-                public void onAdClicked(Ad ad) {
-
-                }
-
-                @Override
-                public void onLoggingImpression(Ad ad) {
-
-                }
-            };
-            nativeBannerAd2.loadAd(
-                    nativeBannerAd2.buildLoadAdConfig()
-                            .withAdListener(nativeAdListener)
-                            .build());
-
-
-        }
-
-        {
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
             String full = sharedPreferences.getString("full", null);
             interstitialAd1 = new com.facebook.ads.InterstitialAd(this, full);
             Log.e(TAG, "fbfull1 " + full);
@@ -392,13 +315,9 @@ public class honeygaincase117_SplashActivity extends AppCompatActivity {
 ///////////////
 
 
-        }
-        {
-            sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String full = sharedPreferences.getString("full", null);
             interstitialAd2 = new com.facebook.ads.InterstitialAd(this, full);
             Log.e(TAG, "fbfull1 " + full);
-            InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            InterstitialAdListener interstitialAdListener1 = new InterstitialAdListener() {
                 @Override
                 public void onInterstitialDisplayed(Ad ad) {
                     Log.e("1", "Interstitial ad displayed.");
@@ -434,12 +353,12 @@ public class honeygaincase117_SplashActivity extends AppCompatActivity {
             };
             interstitialAd2.loadAd(
                     interstitialAd2.buildLoadAdConfig()
-                            .withAdListener(interstitialAdListener)
+                            .withAdListener(interstitialAdListener1)
                             .build());
-///////////////
-
 
         }
+
+        NextScreen();
     }
 
 
