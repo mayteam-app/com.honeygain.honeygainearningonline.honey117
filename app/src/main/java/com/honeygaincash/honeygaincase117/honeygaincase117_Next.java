@@ -30,6 +30,7 @@ public class honeygaincase117_Next extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.honeygaincase117_continue);
 
+        dialgbox();
 
         if (savedInstanceState == null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
