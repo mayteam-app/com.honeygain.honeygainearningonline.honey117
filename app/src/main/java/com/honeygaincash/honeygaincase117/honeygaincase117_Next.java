@@ -30,13 +30,6 @@ public class honeygaincase117_Next extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.honeygaincase117_continue);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String savedData = sharedPreferences.getString("secondcharacter", null);
-        if (savedData != null && savedData.charAt(0) == '1') {
-            dialgbox1();
-        } else {
-            dialgbox();
-        }
 
         if (savedInstanceState == null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -62,20 +55,40 @@ public class honeygaincase117_Next extends AppCompatActivity {
     }
 
     private void startCountdown() {
-        countDownTimer = new CountDownTimer(5000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                long secondsLeft = millisUntilFinished / 1000;
-                start.setText("Next (" + secondsLeft + ")");
-                start.setEnabled(false); // Disable the button during countdown
-            }
 
-            @Override
-            public void onFinish() {
-                start.setText("Next");
-                start.setEnabled(true); // Enable the button after countdown completes
-            }
-        };
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String savedData = sharedPreferences.getString("secondcharacter", null);
+        if (savedData != null && savedData.charAt(0) == '1') {
+            countDownTimer = new CountDownTimer(10000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    long secondsLeft = millisUntilFinished / 1000;
+                    start.setText("Next (" + secondsLeft + ")");
+                    start.setEnabled(false); // Disable the button during countdown
+                }
+
+                @Override
+                public void onFinish() {
+                    start.setText("Next");
+                    start.setEnabled(true); // Enable the button after countdown completes
+                }
+            };
+        } else {
+            countDownTimer = new CountDownTimer(5000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    long secondsLeft = millisUntilFinished / 1000;
+                    start.setText("Next (" + secondsLeft + ")");
+                    start.setEnabled(false); // Disable the button during countdown
+                }
+
+                @Override
+                public void onFinish() {
+                    start.setText("Next");
+                    start.setEnabled(true); // Enable the button after countdown completes
+                }
+            };
+        }
 
         countDownTimer.start();
     }
