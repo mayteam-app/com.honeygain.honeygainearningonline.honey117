@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/honeygaincase117_bggg"
+    android:background="@color/bg"
     android:orientation="vertical"
     android:weightSum="2">
 
+    <include layout="@layout/honeygaincase117_relativelayout" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,17 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-
-            <FrameLayout
-                android:id="@+id/fl_adplaceholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-
-            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,17 +64,6 @@
 
 
             </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/flb_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="15dp"
-                android:gravity="bottom"
-                android:visibility="visible">
-
-            </FrameLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/q1"
@@ -179,7 +158,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/honeygaincase117_thebatman"></ImageView>
+                            android:background="@drawable/honeygaincase117_thebatman" />
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
@@ -240,7 +219,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/honeygaincase117_doctorstrange"></ImageView>
+                            android:background="@drawable/honeygaincase117_doctorstrange" />
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
@@ -277,17 +256,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <FrameLayout
-                android:id="@+id/flb_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="15dp"
-                android:gravity="bottom"
-                android:visibility="visible">
-
-            </FrameLayout>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/q4"
                 android:layout_width="match_parent"
@@ -314,7 +282,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/honeygaincase117_misioni"></ImageView>
+                            android:background="@drawable/honeygaincase117_misioni" />
                     </androidx.cardview.widget.CardView>
 
 
@@ -376,7 +344,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/honeygaincase117_spiderman"></ImageView>
+                            android:background="@drawable/honeygaincase117_spiderman" />
                     </androidx.cardview.widget.CardView>
 
 
@@ -439,7 +407,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/honeygaincase117_aquaman"></ImageView>
+                            android:background="@drawable/honeygaincase117_aquaman" />
                     </androidx.cardview.widget.CardView>
 
 
@@ -475,20 +443,10 @@
 
             </androidx.cardview.widget.CardView>
 
-            <FrameLayout
-                android:id="@+id/fl_b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="15dp"
-                android:gravity="bottom"
-                android:visibility="visible">
 
-            </FrameLayout>
         </LinearLayout>
 
 
     </ScrollView>
-
 
 </LinearLayout>

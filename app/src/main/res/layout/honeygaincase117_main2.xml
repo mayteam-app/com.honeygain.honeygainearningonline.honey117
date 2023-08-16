@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/honeygaincase117_bggg"
+    android:background="@color/bg"
     android:orientation="vertical"
     android:weightSum="3">
 
 
-    <FrameLayout
-        android:id="@+id/fl_adplaceholder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible">
-
-
-    </FrameLayout>
+    <include layout="@layout/honeygaincase117_relativelayout"/>
 
 
     <LinearLayout
@@ -26,20 +17,7 @@
         android:layout_marginTop="5dp"
         android:layout_weight="3"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/btn"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="220dp"
-            android:layout_height="55dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:backgroundTint="#fff"
-            android:text="Move To Original App"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            android:visibility="gone">
 
-        </Button>
         <ImageView
 
             android:layout_width="match_parent"
@@ -65,26 +43,17 @@
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="220dp"
                 android:layout_height="55dp"
-                android:backgroundTint="#fff"
-                android:text="Skip This"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
-                android:textSize="17dp">
-
-            </Button>
-
-
+                android:textSize="17dp"
+                android:text="Skip This" />
 
         </LinearLayout>
-    </LinearLayout>
-    <FrameLayout
-        android:id="@+id/fl_b"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="bottom"
-        android:visibility="visible">
 
-    </FrameLayout>
+
+    </LinearLayout>
+
+
 </LinearLayout>
 
 
